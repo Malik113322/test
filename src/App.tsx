@@ -3,7 +3,7 @@ import Hero from "./components/Hero"
 
 const App = () => {
 
-  const [showRightData, setShowRightData] = useState(false);
+  const [showRightData, setShowRightData] = useState(true);
 
   return (
 

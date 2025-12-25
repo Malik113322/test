@@ -40,12 +40,12 @@ const Hero = ({showRightData, setShowRightData}) => {
   ];
 
   return (
-    <div className="flex relative">
+    <div className="flex flex-col sm:flex-row relative">
       <Sidebar showRightData={showRightData} setShowRightData={setShowRightData} />
 
       {/* RIGHT PAGE  */}
      {
-      showRightData && <>   <div className=" p-5 ml-14 mt-10 sm:ml-0 sm:mt-0 flex-1 ">
+      showRightData && <>   <div className=" p-5 ml-14 mt-11 sm:ml-0 sm:mt-0 flex-1 ">
         <div className="flex justify-center p-0 m-0 sm:hidden">
        <div className="absolute top-2 flex items-center gap-2"> {Logo2}
         <p className="

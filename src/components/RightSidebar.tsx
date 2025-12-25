@@ -1,3 +1,4 @@
+
 import {
   AddIcon,
   BellIconProfile,
@@ -43,17 +44,16 @@ const RightSidebar = () => {
 
   return (
     <div
-      className="
+      className="ml-12 sm:m-0
         shadow-[0px_14px_42px_0px_#080F340F]
         py-6 sm:py-8
-        px-4 sm:px-6
+        px-0 sm:px-6
         flex flex-col
         gap-6
-        w-full
       "
     >
       {/* Header */}
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row justify-between items-center ">
         <p className="font-inter font-medium text-navItems">Your Profile</p>
         {DotIcon}
       </div>
@@ -62,7 +62,7 @@ const RightSidebar = () => {
       <div className="text-center flex flex-col items-center gap-4">
         <div
           className="
-            w-20 h-20 sm:w-24 sm:h-24
+           
             rounded-full
             border-8
             border-t-starComponent border-r-starComponent
@@ -86,7 +86,7 @@ const RightSidebar = () => {
           </p>
         </div>
 
-        <div className="flex gap-4 sm:gap-6 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
           {BellIconProfile}
           {ProfileIcon2}
           {ProfileIcon2}
@@ -94,25 +94,22 @@ const RightSidebar = () => {
       </div>
 
       {/* Chart */}
-      <div className="w-full">
         <HistogramChart />
-      </div>
 
       {/* Mentor List */}
-      <div className="flex flex-col gap-4">
-        <div className="flex justify-between items-center">
+      <div className="flex flex-col gap-4  ">
+        <div className="flex flex-col justify-center gap-2 sm:flex-row sm:justify-between items-center ">
           <p className="font-medium font-inter text-navItems">
             Your Mentor
           </p>
           {AddIcon}
         </div>
-
         <div className="flex flex-col justify-center px-2 sm:px-3">
           {Items.map((item, index) => (
             <div
               key={index}
               className={`
-                flex items-center gap-3
+                flex flex-col sm:flex-row items-center gap-3 
                 py-3
                 border-b border-[#D8D8D8]
                 ${index === Items.length - 1 ? "border-b-0" : ""}
@@ -124,8 +121,8 @@ const RightSidebar = () => {
                 className="object-cover w-8 h-8 sm:w-6 sm:h-6 rounded-full"
               />
 
-              <div className="flex justify-between items-center w-full gap-4">
-                <div>
+              <div className="flex flex-col sm:flex-row text-center sm:text-start justify-between items-center  gap-4">
+                <div className="">
                   <p className="font-inter font-medium text-[11px] sm:text-[10px] text-navItems">
                     {item.title}
                   </p>
@@ -139,10 +136,10 @@ const RightSidebar = () => {
                 </p>
               </div>
             </div>
+
           ))}
         </div>
-
-        <p className="rounded-full py-2 px-3 text-starComponent bg-designation text-center font-inter text-[12px] font-medium cursor-pointer">
+        <p className="rounded-full py-2 px-3 text-starComponent bg-designation text-center font-inter text-[12px] font-medium cursor-pointer w-25 mx-auto sm:w-full ">
           See All
         </p>
       </div>
@@ -151,3 +148,6 @@ const RightSidebar = () => {
 };
 
 export default RightSidebar;
+
+
+
