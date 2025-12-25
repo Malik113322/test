@@ -2,6 +2,7 @@
 import {
   AddIcon,
   BellIconProfile,
+  Circle,
   DotIcon,
   ProfileIcon2,
 } from "../assets/Icons";
@@ -60,23 +61,16 @@ const RightSidebar = () => {
 
       {/* Profile Section */}
       <div className="text-center flex flex-col items-center gap-4">
-        <div
-          className="
-           
-            rounded-full
-            border-8
-            border-t-starComponent border-r-starComponent
-            border-b-[#CCCCCC4D] border-l-[#CCCCCC4D]
-            flex items-center justify-center
-          "
-        >
+        <div className="relative">{Circle}
+       <div className="absolute sm:w-16 sm:h-16 top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+
           <img
             src={ProfileImg}
             alt="profile"
             className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
-          />
-        </div>
-
+            />
+            </div>
+</div>
         <div>
           <p className="font-inter text-navItems font-medium text-sm sm:text-base">
             Good Morning Prashant
