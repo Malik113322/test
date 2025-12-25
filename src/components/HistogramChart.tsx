@@ -1,58 +1,3 @@
-// import Highcharts from "highcharts";
-// import HighchartsReact from "highcharts-react-official";
-
-// // Import histogram module
-// import HistogramModule from "highcharts/modules/histogram-bellcurve";
-
-
-// // Initialize the module
-// HistogramModule(Highcharts); // ✅ This works
-
-// const HistogramChart = () => {
-//   // Sample data
-//   const data = [1, 2, 2, 3, 3, 3, 4, 4, 5];
-
-//   const options = {
-//     title: {
-//       text: "Histogram Example",
-//     },
-//     xAxis: [
-//       {
-//         title: { text: "Data" },
-//       },
-//       {
-//         title: { text: "Histogram" },
-//         alignTicks: false,
-//       },
-//     ],
-//     yAxis: [
-//       {
-//         title: { text: "Frequency" },
-//       },
-//     ],
-//     series: [
-//       {
-//         name: "Data",
-//         type: "scatter",
-//         data: data,
-//         visible: false, // hide scatter points if you want only histogram
-//       },
-//       {
-//         name: "Histogram",
-//         type: "histogram",
-//         baseSeries: 0, // links to the scatter series index
-//         zIndex: -1,
-//       },
-//     ],
-//   };
-
-//   return <HighchartsReact highcharts={Highcharts} options={options} />;
-// };
-
-// export default HistogramChart;
-
-
-
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
@@ -61,12 +6,11 @@ const LearningProgressChart = () => {
     chart: {
       type: "column",
       backgroundColor: "transparent",
-      height: 250,
+      height: 280,
+      spacing: [0, 0, 0, 0],
     },
 
-    title: {
-      text: null,
-    },
+    title: { text: null },
 
     xAxis: {
       visible: false,
@@ -74,41 +18,41 @@ const LearningProgressChart = () => {
 
     yAxis: {
       visible: false,
+      maxPadding: 0,
     },
 
-    legend: {
-      enabled: false,
-    },
-
-    tooltip: {
-      enabled: false,
-    },
+    legend: { enabled: false },
+    tooltip: { enabled: false },
 
     plotOptions: {
       column: {
         stacking: "normal",
-        borderRadius: 12,
-        pointPadding: 0.2,
-        groupPadding: 0.1,
+        pointWidth: 40,          // 👈 bar width like Figma
+        groupPadding: 0.15,      // 👈 space between bars
+        borderWidth: 0,
+      },
+      series: {
+        borderRadiusTopLeft: 14,  // 👈 rounded top only
+        borderRadiusTopRight: 14,
       },
     },
 
     series: [
       {
-        data: [20, 30, 40, 50, 45],
-        color: "#8B3DFF",
+        data: [4, 6, 6, 7, 6],
+        color: "#F3ECFF", // top light layer
       },
       {
-        data: [15, 20, 25, 30, 28],
-        color: "#B88CFF",
+        data: [2, 4, 8, 10, 8],
+        color: "#E4CFFF",
       },
       {
-        data: [10, 15, 20, 25, 22],
-        color: "#D8BFFF",
+        data: [8, 10  , 12, 14, 12],
+        color: "#CDA3FF",
       },
       {
-        data: [5, 10, 15, 20, 18],
-        color: "#EFE6FF",
+        data: [10, 12, 13, 20, 18 ],
+        color: "#8B2CF5", // bottom dark layer
       },
     ],
   };

@@ -94,7 +94,7 @@ const Sidebar = ({ showRightData, setShowRightData }) => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2.5">
+      <div className="flex flex-col gap-2.5 ">
         <p className="font-inter text-navheading font-semibold hidden sm:block">
           SETTINGS
         </p>
